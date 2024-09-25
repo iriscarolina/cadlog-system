@@ -4,11 +4,11 @@ class UserController
     //Função para registrar um novo usuário
     public function register(){
     // Verifica se a requisiçao HTTP é do tipo POST
-    if($_SERVER['REQUEST_METOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //Coleta dados enviados e armazena em um array
         $data = [
-            'nome' => $POST['nome'],
-            'email' => $POST['email'],
+            'nome' => $_POST['nome'],
+            'email' => $_POST['email'],
             'senha' => password_hash($_POST['senha'],PASSWORD_DEFAULT), //Criptografa a senha
             'perfil'=> $_POST['perfil']
 
@@ -18,7 +18,7 @@ class UserController
         User::create($data);
         header('Location: index.php');
      }else{
-        include'views/register.php';
+        include 'views/register.php';
      }
    }
 }

@@ -4,7 +4,7 @@ class Database{
     private static $instance = null;
 
     // Metod publico que retorna a conexão com BD
-    public static function getConection(){
+    public static function getConnection(){
         if(!self::$instance){
             $host       ='localhost';
             $db         ='sistema_usuarios';
@@ -12,11 +12,10 @@ class Database{
             $password   ='';
 
             //A conexão usa o drive Mysql (mysql:) e as informações de host BD
-            self::$instance = new PDO("mysql:host=$host;dbname=$db, $user, $password");
+            self::$instance = new PDO("mysql:host=$host;dbname=$db", $user, $password);
 
             //define o modo de erro para conexões, facilitando a depuração e tratamento dos erros
-            self::$instance->numfmt_set_attribute
-            (PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            self::$instance->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         return self::$instance;
     }

@@ -15,11 +15,11 @@
             </section>
             <section>
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha">
+                <input type="password" name="senha" id="senha" required>
             </section>
             <button type="submit">Login</button>
         </form>
-        <a href="">Cadastre-se</a>
+        <a href="index.php?action=register">Cadastre-se</a>
     </main>
 </body>
 </html>
