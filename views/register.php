@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="views/principal.css">
     <title>Cadastre-se</title>
 </head>
 <body>
-    <div>
+    <main>
         <h2>Cadastro de Usuario</h2>
         <form action="index.php?action=register" method="post">
-            <label for="Nome">Nome</label>
-            <input type="text" name="nome" id="nome" required>
+
+            <label for="Nome">Nome</label><br>
+            <input type="text" name="nome" id="nome" required><br>
 
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>
@@ -29,6 +31,6 @@
             <button type="submit">Cadastrar</button>
         </form>
         <a href="index.php?action=login">Voltar ao login</a>
-    </div>
+</main>
 </body>
 </html>

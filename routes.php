@@ -7,6 +7,7 @@ require 'controllers/DashboardController.php'; //instancia controlador de dashbo
 //cria instancia dos controladores para utilizar seus metodos
 $authController = new AuthController();
 $userController = new UserController();
+$dashboardController = new DashboardController();
 //$dashboardController = new DashboardController();
 
 // Coleta a ação da URL, se não houver ação definida, usa 'login' como padrão
@@ -19,6 +20,10 @@ switch ($action){
     case 'register':
         $userController->register();
         break;
+     case 'dashboar':
+        $dashboardController->index();
+        break;
+
     default:
     $authController->login();
     break;
