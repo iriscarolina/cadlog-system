@@ -20,10 +20,12 @@ switch ($action){
     case 'register':
         $userController->register();
         break;
-     case 'dashboar':
+     case 'dashboard':
         $dashboardController->index();
         break;
-
+    case 'list':
+        $userController->list();
+        break;
     default:
     $authController->login();
     break;

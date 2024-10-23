@@ -21,6 +21,11 @@ class UserController
         include 'views/register.php';
      }
    }
+
+   public function list(){
+    $users = User::all();
+    include 'views/list_users.php';
+   }
 }
 
 ?>
