@@ -55,6 +55,9 @@ tr:hover {
     background-color: #444; /* Efeito hover nas linhas */
 }
 
+td{
+    color: white;
+}
 .btn {
     display: block; /* Exibe como bloco */
     width: 100%; /* Largura total do botão */

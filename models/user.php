@@ -49,7 +49,7 @@ class User
     }
 
     //Função responsavel pela atualização dos dados dos usuarios na base de dados 
-    public static function update ($id, $data){
+    public static function update($id, $data){
         $conn = Database::getConnection();
         //prepara uma consulta SQL para atualizar, nome, email e perfil, com base no id do usuario
         $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");

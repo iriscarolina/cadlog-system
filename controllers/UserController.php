@@ -26,6 +26,27 @@ class UserController
     $users = User::all();
     include 'views/list_users.php';
    }
+
+   public function edit($sid){
+    session_start();
+    if($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor'){
+        $user = User::find($id);
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $data = [
+                'nome'  => $_POST{'nome'}, 
+                'email' => $_POST{'email'},
+                'perfil'=> $_POST('perfil'),
+            ];
+            User::update($id, $data);
+            header('Location: index.php?action=list');
+        }else{
+            include 'views/edit_user.php';
+        }
+    }else{
+        echo 'Voce nao tem permissão para editar usuarios';
+    }
+   }
 }
 
 ?>
