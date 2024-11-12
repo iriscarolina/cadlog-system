@@ -37,11 +37,11 @@
                     <td><?= $user['perfil'] ?></td>
                     <td>
                         <?php if($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor'):?>
-                            <a href="">Editar</a>
+                            <a href="index.php?action=edit&id=<?=$user['id']?>" class="btn">Editar</a>
                         <?php endif; ?>
 
                         <?php if($_SESSION['perfil'] == 'admin'): ?>
-                            <a href="">Excluir</a>
+                            <a href="index.php?action=delete&id=<?=$user['id'] ?>" class="btn btn-delete" onclick="return confirm('tem certeza que deseja excluir?')">Excluir</a>
                         <?php endif; ?>
 
                     </td>
@@ -51,7 +51,7 @@
             </tbody>
         </table>
  
-        <a href="" class="btn">Voltar ao Dashboard</a>
+        <a href="index,php?action=dashboard" class="btn">Voltar ao Dashboard</a>
     </div>
 </body>
  

@@ -11,19 +11,18 @@
 <body class="edit-body">
 <div class="edit-container">
 <h2>Editar Usuário</h2>
-<form method="post" action="index.php?action=edit&id=<?= $user['id']?>" class="edit-form">
+<form method="post" action="index.php?action=edit&id=<?=$user['id']?>" class="edit-form">
 <label for="nome">Nome:</label>
-<input type="text" name="nome" id="nome" value="<?= $user['nome']?>" required>
+<input type="text" name="nome" id="nome" value="<?=$user['nome']?>" required>
  
-            <label for="email">Email:</label>
-<input type="email" name="email" id="email" value="<?= $user['email']?>" required>
+<label for="email">Email:</label>
+<input type="email" name="email" id="email" value="<?=$user['email']?>" required>
  
-            <label for="perfil">Perfil:</label>
+<label for="perfil">Perfil:</label>
 <select name="perfil" id="perfil">
-    <!--implementação ternario, verifica se o perfil adicionado e admin//-->
-<option value="admin"<?= $user['perfil'] == 'admin' ? 'selected' : ''?> >Admin</option>
-<option value="gestor" <?= $user['perfil'] == 'gestor' ? 'selected' : ''?>  >Gestor</option>
-<option value="colaborador" <?= $user['perfil'] == 'colaborador' ? 'selected' : ''?>  >Colaborador</option>
+<option value="admin" <?=$user['perfil'] == 'admin' ? 'selected' : '' ?>>Admin</option><!---operador ternáio - torna o perfil no perfil selecionado-->
+<option value="gestor" <?=$user['perfil'] == 'gestor' ? 'selected' : '' ?>>Gestor</option>
+<option value="colaborador" <?=$user['perfil'] == 'colaborador' ? 'selected' : '' ?>>Colaborador</option>
 </select>
  
             <button type="submit" class="btn">Salvar</button>
@@ -33,4 +32,3 @@
 </body>
  
 </html>
- 
